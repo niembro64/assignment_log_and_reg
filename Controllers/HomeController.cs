@@ -82,7 +82,7 @@ namespace assignment_log_and_reg.Controllers
         if (userInDb == null)
         {
           ModelState.AddModelError("Email", "Invalid Email/Password");
-          return View("Index");
+          return View("UserLogin");
         }
         // Check Password
         PasswordHasher<LoginUser> hasher = new PasswordHasher<LoginUser>();
@@ -90,7 +90,7 @@ namespace assignment_log_and_reg.Controllers
         if (result == 0)
         {
           ModelState.AddModelError("Email", "Invalid Email/Password");
-          return View("Index");
+          return View("UserLogin");
         }
 
 
@@ -98,7 +98,7 @@ namespace assignment_log_and_reg.Controllers
       }
       else
       {
-        return View("Index");
+        return View("UserLogin");
       }
 
     }

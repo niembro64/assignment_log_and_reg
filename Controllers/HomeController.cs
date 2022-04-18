@@ -43,6 +43,12 @@ namespace assignment_log_and_reg.Controllers
       return View();
     }
 
+    [HttpGet("logout")]
+    public IActionResult Logout(){
+      HttpContext.Session.Clear();
+      return View("userlogin");
+    }
+
     [HttpPost("users/add")]
     public IActionResult AddUser(User newUser)
     {

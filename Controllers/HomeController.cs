@@ -9,6 +9,7 @@ using assignment_log_and_reg.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Http;
 
 namespace assignment_log_and_reg.Controllers
 {
@@ -29,12 +30,16 @@ namespace assignment_log_and_reg.Controllers
     }
     public IActionResult Success()
     {
-      return View();
+      if(HttpContext.Session.GetInt32("UserId") == null){
+        return RedirectToAction("UserLogin");
+      }
+      User LoggedInUser = _context.Users.FirstOrDefault(a => a.UserId == (int)HttpContext.Session.GetInt32("UserId"));
+      return View(LoggedInUser);
     }
 
     [HttpGet("userlogin")]
-    public IActionResult UserLogin(){
-
+    public IActionResult UserLogin()
+    {
       return View();
     }
 
@@ -62,6 +67,8 @@ namespace assignment_log_and_reg.Controllers
 
         // Login(newUser);
 
+        // Set Session
+        HttpContext.Session.SetInt32("UserId", newUser.UserId);
         return RedirectToAction("Success");
       }
       else
@@ -93,6 +100,8 @@ namespace assignment_log_and_reg.Controllers
           return View("UserLogin");
         }
 
+        // Set Session
+        HttpContext.Session.SetInt32("UserId", userInDb.UserId);
 
         return RedirectToAction("Success");
       }

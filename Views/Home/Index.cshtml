@@ -1,8 +1,30 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+@model User
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="d-flex justify-content-center align-items-center flex-column">
+    <form class="d-flex flex-column align-items-center" action="/users/add" method="post">
+        <h1>New User</h1>
+
+        <label for="FirstName">FirstName</label>
+        <input asp-for="FirstName">
+        <span asp-validation-for="FirstName"></span>
+
+        <label for="LastName">LastName</label>
+        <input asp-for="LastName">
+        <span asp-validation-for="LastName"></span>
+
+        <label for="Email">Email</label>
+        <input asp-for="Email">
+        <span asp-validation-for="Email"></span>
+
+        <label for="Password">Password</label>
+        <input asp-for="Password">
+        <span asp-validation-for="Password"></span>
+
+
+
+        <input type="submit" value="Register" class="btn btn-primary my-3">
+    </form>
 </div>

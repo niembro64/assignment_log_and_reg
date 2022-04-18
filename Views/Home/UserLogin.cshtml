@@ -1,0 +1,22 @@
+@{
+    ViewData["Title"] = "Login User";
+}
+@model LoginUser
+
+<div class="d-flex justify-content-center align-items-center flex-column">
+        <a class="btn btn-secondary my-3" href="/">User Registration</a>
+
+    <form class="d-flex flex-column align-items-center" action="/users/login" method="post">
+        <h1>User Login</h1>
+
+        <label for="Email">Email</label>
+        <input asp-for="Email">
+        <span asp-validation-for="Email"></span>
+
+        <label for="Password">Password</label>
+        <input asp-for="Password">
+        <span asp-validation-for="Password"></span>
+
+        <input type="submit" value="Log In" class="btn btn-success my-3">
+    </form>
+</div>

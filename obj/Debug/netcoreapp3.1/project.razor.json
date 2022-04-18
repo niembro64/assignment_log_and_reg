@@ -14402,6 +14402,11 @@
   "RootNamespace": "assignment_log_and_reg",
   "Documents": [
     {
+      "FilePath": "c:\\Users\\nieme\\Documents\\CodingDojo\\CSharpStack2022\\2.4\\assignment_log_and_reg\\Views\\Home\\Success.cshtml",
+      "TargetPath": "Views\\Home\\Success.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\nieme\\Documents\\CodingDojo\\CSharpStack2022\\2.4\\assignment_log_and_reg\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
@@ -14409,6 +14414,11 @@
     {
       "FilePath": "c:\\Users\\nieme\\Documents\\CodingDojo\\CSharpStack2022\\2.4\\assignment_log_and_reg\\Views\\Shared\\Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\nieme\\Documents\\CodingDojo\\CSharpStack2022\\2.4\\assignment_log_and_reg\\Views\\Home\\UserLogin.cshtml",
+      "TargetPath": "Views\\Home\\UserLogin.cshtml",
       "FileKind": "mvc"
     },
     {
